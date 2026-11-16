@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "pacta": {
+      "url": "https://pacta-x402.pacta.workers.dev/mcp"
+    }
+  }
+}

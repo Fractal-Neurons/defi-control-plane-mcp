@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "pacta": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://pacta-x402.pacta.workers.dev/mcp"]
+    }
+  }
+}
