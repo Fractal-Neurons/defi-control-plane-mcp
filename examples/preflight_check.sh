@@ -18,6 +18,7 @@ if [[ ! "$ADDRESS" =~ ^0x[0-9a-fA-F]{40}$ ]]; then
 fi
 
 # caller_agent / requester_role / caller_purpose are optional over REST and describe the workflow, never a person.
-curl -fsS --max-time 30 \
+# Always send a User-Agent: Cloudflare's edge refuses some default library agents (error 1010) before the API answers.
+curl -fsS --max-time 30 -A "${PACTA_USER_AGENT:-my-agent/1.0}" \
   "${API}/v1/check/preflight?chain=${CHAIN}&address=${ADDRESS}&caller_agent=shell-example&requester_role=defi_developer&caller_purpose=integration_testing"
 echo

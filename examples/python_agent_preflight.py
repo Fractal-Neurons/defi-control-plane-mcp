@@ -17,7 +17,8 @@ import urllib.request
 
 MCP_URL = "https://pacta-x402.pacta.workers.dev/mcp"
 
-# Three required, non-personal fields on every free tools/call (closed enums; see the server's tool schema):
+# Optional, non-personal attribution fields (closed enums; omitted ones never block a call). The explicit User-Agent below matters:
+# Cloudflare's edge refuses some default library agents (error 1010, e.g. bare "Python-urllib") before the API answers.
 CALLER = {
     "caller_agent": "python-agent-example",        # lowercase slug naming your agent / framework, never a person
     "requester_role": "autonomous_agent",          # autonomous_agent | defi_developer | risk_curator_analyst | ...

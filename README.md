@@ -31,13 +31,15 @@ python3 examples/python_agent_preflight.py ethereum 0xA0b86991c6218b36c1d19D4a2e
 
 ## Caller fields
 
-Every free MCP `tools/call` takes three required, non-personal fields that describe the workflow, never a person:
+Every free MCP `tools/call` accepts three optional, non-personal attribution fields that describe the workflow, never a person (omitted fields never block a call):
 
 - `caller_agent`: a lowercase slug for your agent, IDE or framework (`^[a-z0-9][a-z0-9._/-]{1,47}$`, e.g. `claude-code`, `cursor`);
 - `requester_role`: `autonomous_agent` | `defi_developer` | `risk_curator_analyst` | `security_researcher` | `protocol_team` | `institutional_allocator` | `individual_user`;
 - `caller_purpose`: `pre_trade_safety` | `collateral_due_diligence` | `yield_allocation` | `security_audit` | `governance_monitoring` | `integration_testing` | `general_research`.
 
-Missing or invalid values get JSON-RPC `-32602` listing what is allowed. Over REST they are optional query parameters.
+A non-blank invalid value gets JSON-RPC `-32602` listing what is allowed. Over REST they are optional query parameters.
+
+HTTP clients should send a User-Agent (`curl -A "my-agent/1.0"`, or `headers={"User-Agent": "my-agent/1.0"}` with `urllib`): Cloudflare's edge refuses some default library agents with error 1010 before the API answers.
 
 ## Verdicts
 
