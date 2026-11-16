@@ -50,9 +50,11 @@ plane of any contract on Ethereum or Base) and the timelock / proposal scanners 
 ## Links
 
 - Canonical repository: https://github.com/Fractal-Neurons/pacta
-- Live index (74 protocols, block-pinned, Base EAS-attested records): https://pacta.wtf/
+- Live index (74 indexed protocols: 62 Base-EAS-attested + 12 RPC-pinned; every record block-pinned): https://pacta.wtf/
 - USDC bounties for verified control-plane mismatches: https://pacta.wtf/bounties/
 - Hunter leaderboard: https://pacta.wtf/leaderboard/
+- Community & Builder Q&A (GitHub Discussions): https://github.com/Fractal-Neurons/pacta/discussions
+  (questions about targets, fixtures or the MCP tools: the Builder & Bounty Q&A thread, https://github.com/Fractal-Neurons/pacta/discussions/44)
 
 Read-only on-chain analysis, not investment advice. Report security vulnerabilities to the affected protocol's bug
 bounty programme, not in issues here.
